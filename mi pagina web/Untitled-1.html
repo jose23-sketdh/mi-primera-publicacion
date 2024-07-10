@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto en Movimiento</title>
+    <style>
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+        .parrafo-con-borde {
+        border: 2px solid #000; /* Borde sólido de 2px de ancho y color negro */
+        padding: 10px; /* Espacio alrededor del contenido del párrafo */
+    }
+    .parrafo-con-contorno{
+            border-collapse: collapse;
+            border: 1px solid rgb(255, 255, 255);
+            padding: 1px;
+            box-shadow: 4px 6px 10px rgb(127, 128, 127);
+            border-spacing: 10px;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+          }
+          .cambiar-color {
+        color: black; /* Color inicial del texto */
+        transition: color 0.3s; /* Transición suave durante 0.3 segundos */
+    }
+    .cambiar-color:hover {
+        color: red; /* Color del texto al pasar el cursor */
+    }
+    .contenedor {
+        background-color: #f0f0f0; /* Color de fondo inicial */
+        width: 300px; /* Ancho del contenedor */
+        height: 200px; /* Alto del contenedor */
+        transition: background-color 0.3s; /* Transición suave durante 0.3 segundos */
+        padding: 20px; /* Espacio interno del contenedor */
+    }
+    .contenedor:hover {
+        background-color: #c0c0c0; /* Color de fondo al pasar el cursor */
+    }
+    .sombra {
+        text-shadow: 2px 2px 4px rgba(255, 43, 43, 0.5); /* offsetX offsetY blurRadius color */
+        font-size: 24px; /* Tamaño de fuente */
+        font-weight: bold; /* Negrita */
+        color: #000000; /* Color del texto */
+    }
+    .left-section {
+            width: 50%; /* Ancho del 50% de la página */
+            float: left; /* Alinear a la izquierda */
+            background-color: #f0f0f0; /* Color de fondo */
+            padding: 20px; /* Espacio interno */
+            box-sizing: border-box; /* Incluir padding en el ancho */
+        }
+        .right-section {
+            width: 50%; /* Ancho del 50% de la página */
+            float: left; /* Alinear a la izquierda */
+            background-color: #e0e0e0; /* Color de fondo */
+            padding: 20px; /* Espacio interno */
+            box-sizing: border-box; /* Incluir padding en el ancho */
+        }
+        .clear {
+            clear: both; /* Limpiar flotantes */
+        }
+        .precio-container {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 300px;
+            text-align: center;
+        }
+        .volumen-slider {
+            width: 80%;
+            margin-top: 10px;
+        }
+        .search-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .search-box {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+        .search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+        
+    </style>
+    <script>
+        function desmarcarOtros(checkbox) {
+            var checkboxes = document.getElementsByName(checkbox.name); // Obtener todos los checkboxes con el mismo nombre
+            checkboxes.forEach(function(current) {
+                if (current !== checkbox) current.checked = false; // Desmarcar los checkboxes que no son el actual
+            });
+        }
+    </script>
+</head>
+<body>
+    <marquee behavior="scroll" direction="left">Este es un texto en movimiento</marquee>
+    <p class="parrafo-con-contorno">Este es un párrafo con contorno en HTML.</p>
+    <p class="cambiar-color">Pasa el cursor sobre este texto para ver el cambio de color.</p>
+    <div class="contenedor">
+        <h2>Ejemplo de contenedor que cambia de color al pasar el cursor</h2>
+        <p>Este es un párrafo dentro del contenedor.</p>
+    </div>
+    <p class="sombra">Texto con sombra</p>
+    <div class="left-section">
+        <!-- Contenido de la sección izquierda -->
+        <h2>Sección Izquierda</h2>
+        <p>Este es el contenido de la sección izquierda.</p>
+    </div>
+    <div class="right-section">
+        <!-- Contenido de la sección derecha -->
+        <h2>Sección Derecha</h2>
+        <p>Este es el contenido de la sección derecha.</p>
+    </div>
+    <div class="clear"></div>
+    <div class="precio-container">
+        <h2>Precio: s/.<span id="precio">100</span></h2>
+        <input type="range" min="1" max="100" value="100" class="volumen-slider" id="volumenSlider" oninput="actualizarPrecio()">
+    </div>
+    
+    <script>
+        function actualizarPrecio() {
+            var slider = document.getElementById("volumenSlider");
+            var precio = document.getElementById("precio");
+            precio.textContent = slider.value;
+        }
+    </script>
+
+<div class="search-container">
+    <form action="/buscar" method="get">
+        <input type="text" class="search-box" name="q" placeholder="Buscar..." required>
+        <button type="submit" class="search-button">Buscar</button>
+    </form>
+</div>
+<h2>Seleccione una opción:</h2>
+    <form>
+        <label for="opcion1">
+            <input type="checkbox" id="opcion1" name="opciones" value="opcion1" onchange="desmarcarOtros(this)">
+            Opción 1
+        </label><br>
+        <label for="opcion2">
+            <input type="checkbox" id="opcion2" name="opciones" value="opcion2" onchange="desmarcarOtros(this)">
+            Opción 2
+        </label><br>
+        <label for="opcion3">
+            <input type="checkbox" id="opcion3" name="opciones" value="opcion3" onchange="desmarcarOtros(this)">
+            Opción 3
+        </label><br>
+    </form>
+</body>
+</html>

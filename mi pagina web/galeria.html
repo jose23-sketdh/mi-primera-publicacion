@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.gallery {
+    display: flex;
+    overflow-x: scroll;
+    width: 80%;
+}
+
+.gallery-item {
+    flex: none;
+    width: 300px;
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif; margin:0}
+.slideshow-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+}
+.mySlides {
+    display: none;
+}
+img {
+    vertical-align: middle;
+}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+.carousel {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="mySlides fade"><img src="Gocta.webp" alt="Imagen 1" style="display: flex;"></div>
+        <div class="mySlides fade"><img src="kuelap.jpg" alt="Imagen 2"></div>
+        <div class="mySlides fade"><img src="sarcofagos.avif" alt="Imagen 3"></div>
+        <div class="mySlides fade"><img src="4.-Museo-de-Leymebamba-300x300.webp" alt="imagen 4"></div>
+    <button class="gallery-item prev" onclick="prevslide">anterior</button>
+    <button class="gallery-item next" onclick="nextslide">siguiente</button>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="Gocta.webp" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="kuelap.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="sarcofagos.avif" style="width:100%">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

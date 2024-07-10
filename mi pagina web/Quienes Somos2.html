@@ -1,0 +1,332 @@
+<html>
+<head>
+    <title>ACERCA DE NOSOTROS</title>
+<style>
+    body{
+        background-color: rgb(255, 255, 255);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin: 15px;
+        padding: 0px;
+        font-size: 25px;
+        }
+        header{
+            font-family: arial, Arial, Helvetica, sans-serif;
+            background-color: goldenrod;
+            color: rgb(0, 0, 0);
+            padding: 0px;
+            margin: 0px;
+
+        }
+        footer{ 
+            background-color: goldenrod;
+            padding: 1px;
+            text-align: center;
+            position: static;
+            bottom: 0;
+            left: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            font-size: 20px;
+            color: white;
+        }
+        p{
+            margin: 10px;
+        }
+        .facebook-btn {
+            background-color: #0051ff;
+            color: white;
+            border: none;
+            padding: 10px 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+          }
+          .facebook-btn i {
+            margin-right: 10px;
+          }
+          .youtube-btn {
+            background-color: #c4302b;
+            color: white;
+            border: none;
+            padding: 15px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            padding: 10px;
+            margin: 15px;
+          }
+          .youtube-btn i {
+            margin-right: 10px;
+          }
+          ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            background-color: #fffefe;
+          }
+          li{
+            float: left;
+          }
+          li{
+            display: block;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px 30px;
+            text-decoration: none;
+          }
+          li a:hover{
+            background-color: #ffd7d7;
+          }
+          .half{
+            width: 100%;
+            float: left;
+          }
+          .quarter{
+            width: 50%;
+            float: left;
+          }
+          .inline-text{
+            display: inline-block;
+            margin-right: 10px;
+          }
+          .menu-icon{
+            font-size: 20px;
+            cursor: pointer;
+          }
+        .dropdown-content{
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgb(0,0,0,0.2);
+          z-index: 1;
+        }
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          font-size: 18px;
+        }
+        .dropdown-content a:hover {
+          background-color: #62d893;
+          
+        }
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        .contenerdor{
+          position: relative;
+          width: 300px;
+        }
+        .carousel {
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
+          border: 2px solid #ddd;
+          position: relative;
+        }
+        .carousel-inner {
+          display: flex;
+          transition: transform 1s ease-in-out;
+        }
+        .carousel-item {
+          min-width: 100%;
+          box-sizing: border-box;
+        }
+        .carousel-item img {
+          width: 100%;
+          display: block;
+          align-content: center;
+        }
+        .texto-superpuesto{
+          position: absolute;
+          top: 100%;
+          left: 15%;
+          transform: translate(-20%, -20%);
+          color: rgb(255, 255, 255);
+          font-size: 30px;
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.5);
+          padding: 10px, 10px;
+        }
+        .superpuesto{
+          position: absolute;
+          top: 1.19%;
+          left: 2.5%;
+          transform: translate(30%, 210%);
+          color: white;
+          font-size: 30px;
+          text-align: center;
+          background-color: rgb(0, 0, 0, 0,5);
+          padding: 15px, 15px;
+        }
+        .marco {
+          position: relative;
+          width: 350px; /* Ajusta según el tamaño de tu imagen */
+          height: 450px; /* Ajusta según el tamaño de tu imagen */
+          background-image: url('fondo-papel.avif'); /* Ruta de la imagen del marco */
+          background-size: cover;
+          background-position: center;
+          border-radius: 10px;
+        }
+        .marco img {
+          position: absolute;
+          top: 40px; /* Ajusta el desplazamiento según sea necesario */
+          left: 40px; /* Ajusta el desplazamiento según sea necesario */
+          width: calc(108% - 60px); /* Ajusta según el tamaño del marco */
+          height: calc(108% - 60px); /* Ajusta según el tamaño del marco */
+          border-radius: 10px;
+        }
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+        .columnas {
+        column-count: 3; /* Divide en 3 columnas */
+        column-gap: 30px; /* Espacio entre columnas */
+        margin: 20px;
+        color: black;
+        font-size: 20px;
+    }
+    .columnas2 {
+      column-count: 2;
+      column-gap: 50px;
+      padding: 1px;
+      margin: 145px;
+      color: black;
+      font-size: 19px;
+
+    }
+    .contenedor {
+        background-color: #f0f0f0; /* Color de fondo inicial */
+        width: 350px; /* Ancho del contenedor */
+        height: 250px; /* Alto del contenedor */
+        transition: background-color 0.3s; /* Transición suave durante 0.3 segundos */
+        padding: 20px; /* Espacio interno del contenedor */
+        width: 90%;
+        margin: 10px;
+        border-radius: 15px;
+    }
+    .contenedor:hover {
+        background-color: #a3a3a3; /* Color de fondo al pasar el cursor */
+        width: 90%;
+    }
+    .sombra {
+        text-shadow: 5px 5px 6px rgb(255, 0, 0); /* offsetX offsetY blurRadius color */
+        font-size: 70px; /* Tamaño de fuente */
+        font-weight: bold; /* Negrita */
+        color: #ffffff; /* Color del texto */
+    }
+</style>
+</head>
+<body>
+  <header>
+      <table>
+        <th><td><img src="logo.png" alt="" width="130" height="60"></td><td>
+          <td></td><td></td><td></td>
+        <ul align="margin-right">
+            <td>
+          <li><div class="dropdown">
+            <i class="fas fa-bars menu-icon"><strong>Nosotros</strong></i>
+            <div class="dropdown-content">
+              <a target="_blank" href="#">Acerca de Nosotros</a>
+              <a target="_blank" href="#">vision y mision</a>
+            </div>
+            </div>
+            </li>
+        </td><td>
+          <li>
+            <div class="dropdown">
+              <i class="fas fa-bars menu-icon"><strong>Paquetes</strong></i>
+              <div class="dropdown-content">
+                <a target="_blank" href="#">familiar</a>
+              </div>
+              </div>
+            </li></td> 
+            <td>
+          <li><div class="dropdown">
+            <i class="fas fa-bars menu-icon"><strong>Servicios</strong></i>
+            <div class="dropdown-content">
+              <a target="_blank" href="#">Paseos Institucionales</a>
+              <a target="_blank" href="#">Servicios Especiales</a>
+            </div>
+            </div>
+            </li></td>
+        </ul>
+        </td>
+        </th>
+      </table>
+    </header>
+    <img src="chachapoyas2.jpg" width="100%" height="50%">
+        <div class="superpuesto"><strong><span class="sombra">DESCUBRE QUIENES SOMOS</span></strong>
+        </div>
+        <div class="columnas2">
+            <p align="justify"><span style="font-size: 50px; font-family:sans-serif;"><strong>¿Quienes Somos?</strong></span><br><br>Somos una empresa con base en la ciudad de Chachapoyas.<br>
+              Contamos con más de 20 años de experiencia y amplio conocimiento de nuestra región y del norte del Perú, con una organización sólida, capacitados para brindar servicios de turismo a personas que
+              deseen cambiar de rutina y pasar momentos gratos e inolvidables en nuestra ciudad. Para ello<br>contamos con personal calificado, como guías oficiales en turismo y conductores profesionales;
+              así mismo, tenemos convenios con los mejores hoteles y restaurantes de nuestra ciudad y de la región Amazonas. Visítenos y sentirán la diferencia de nuestro servicio, desde el primer momento
+              de su llegada a hasta el último día de su partida.</p><br><br><br><br>
+            <div class="marco">
+            <img src="PORTADA-1-scaled.webp" alt="Imagen Principal" width="600" height="650">
+            </div>
+        </div>
+        <div class="columnas2">
+          <div class="marco">
+            <img src="huaylla belen.jpg" alt="imagen Principal" width="500" height="650">
+          </div><br><br><br><br><br><br><br>
+          <p align="justify"><span style="font-size: 50px; font-family:sans-serif;align-items: center;"><strong>Misión</strong></span><br>
+            Facilitar experiencias de viaje memorables y enriquecedoras para nuestros 
+            clientes, ofreciendo servicios turísticos de alta calidad que 
+            superen sus expectativas. Nos comprometemos a promover 
+            el descubrimiento cultural, el bienestar y la 
+            satisfacción del cliente en cada destino que ofrecemos</p>
+        </div>
+        <div class="columnas2">
+            <p align="justify"><span style="font-size: 50px; font-family:sans-serif;align-items: center;"><strong>Vision</strong></span><br>
+                Ser reconocidos como líderes en el sector turístico, destacándonos por nuestra excelencia en el servicio al cliente, la innovación en nuestros productos turísticos y nuestro compromiso con la sostenibilidad ambiental y cultural. Buscamos ser la primera opción de nuestros clientes al planificar sus aventuras alrededor del mundo</p><br><br><br><br><br><br><br><br><br><br>
+              <br><br><br><p><div class="marco">
+                <img src="Catarata_Yumbilla.jpg" alt="imagen Principal" width="500" height="650">
+              </div></p>
+          </div>
+
+    <footer>
+        <p><strong><span style="color: black;">Contactanos</span></strong></p>
+        <div class="columnas">
+          <p align="left"><strong><img src="placeholder_232587.png" width="30" height="30">Visitanos</strong><br>Jr.Hermosura 731, Chachapoyas</p>
+          <p align="left"><strong><img src="big-envelope_81666.png" width="30" height="30">Email</strong><br>contacto@Enchandetexpeditions.com</p>
+          <p align="left"><strong><img src="telephone-call_74451.png" width="30" height="30">Llamanos</strong><br>+51931689657-+51917180405</p>
+        </div>
+        <div class="columnas">
+          <p><img src="logo.png" width="130" height="60"><br>Nosotros estamos comprometidos a ofrecerte esa experiecncia inolvidable que deseas obtener conociendo las riquezas, cultura, historia y cultura natural de la ciudada de chachapoyas.</p><br><br><br>
+          <p><strong>Medios de pago</strong><br><br><img src="Pagos-white.webp" width="260" height="30"></p><br><br><br>
+          <p><strong>Redes Sociales</strong><br>
+        <table border="0" align="center">
+            <tr><td>
+        <a target="_blank" href="#" class="facebook-btn">facebook</a>
+            </td><td>
+        <a href="" target="_blank"><img src="whatsapp-icon.png" alt="Icono de WhatsApp" width="40" height="40" style="margin: 0%;"></a>
+        </td></tr>
+        </table>
+          </p>
+        </div>
+    </footer>
+</body>
+</html>
